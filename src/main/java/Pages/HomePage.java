@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
     @FindBy(xpath = "//img[@class='brand-image-xl logo-xl']")
     WebElement homePageLogo_WebElement;
-
     @FindBy(xpath = "//a[text()='Logout']")
     WebElement logoutButton;
 

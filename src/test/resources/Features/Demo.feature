@@ -10,3 +10,15 @@ Feature: nopcommerce
     Examples:
       |username|password|
     |admin@yourstore.com|admin|
+
+
+  Scenario Outline: Login to NOP Admin website with wrong password
+    Given the user launches NOP Admin url
+    Then the user verifies the header text
+    When the user enters "<username>" in the username webEdit
+    And the user enters "<password>" in the password webEdit
+    And the user clicks on the login button
+    Then the user verifies page is displaying incorrect credentials
+    Examples:
+      |username|password|
+      |admin@yourstore.com|admin123|

@@ -19,6 +19,9 @@ public class LoginPage {
     @FindBy(xpath = "//h1")
     WebElement Header_WebElement;
 
+    @FindBy(xpath = "//div[@class='message-error validation-summary-errors']")
+    WebElement LoginFail;
+
     public LoginPage(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
@@ -39,5 +42,9 @@ public class LoginPage {
 
     public boolean isHeaderDisplayed(){
         return Header_WebElement.isDisplayed();
+    }
+
+    public boolean isLoginFailDisplayed(){
+        return LoginFail.isDisplayed();
     }
 }

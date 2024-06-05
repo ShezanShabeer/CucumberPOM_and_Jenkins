@@ -41,4 +41,9 @@ public class DemoSteps {
     public void the_user_clicks_on_logout_button() {
         homePage.clickLogout();
     }
+
+    @Then("the user verifies page is displaying incorrect credentials")
+    public void theUserVerifiesPageIsDisplayingIncorrectCredentials() {
+        loginPage.isLoginFailDisplayed();
+    }
 }
