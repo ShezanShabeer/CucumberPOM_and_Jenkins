@@ -44,6 +44,27 @@ public class DemoSteps {
 
     @Then("the user verifies page is displaying incorrect credentials")
     public void theUserVerifiesPageIsDisplayingIncorrectCredentials() {
-        loginPage.isLoginFailDisplayed();
+        Assert.assertTrue(loginPage.isLoginFailDisplayed());
+    }
+
+    @When("the user clicks on products tab under catalogue")
+    public void theUserClicksOnProductsTabUnderCatalogue() {
+        homePage.clickProductList();
+    }
+
+    @And("the user enters {string} name on product search")
+    public void theUserEntersNameOnProductSearch(String productName) {
+        homePage.enterProduct(productName);
+    }
+
+    @And("the user clicks on Product Search Button")
+    public void theUserClicksOnProductSearchButton() {
+        homePage.clickSearch();
+    }
+
+    @Then("the user verifies the {string} is displayed")
+    public void theUserVerifiesTheIsDisplayed(String productName) throws InterruptedException {
+        Assert.assertTrue(homePage.isProductDisplayed(productName));
+        Thread.sleep(5000);
     }
 }
